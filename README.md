@@ -6,7 +6,7 @@ Simple proxy that feeds autocomplete requests to an external server (for easier 
 
 Install some dependencies,
 
-```
+```bash
 brew install macvim --with-cscope --with-lua
 brew linkapps macvim
 sudo luarocks install luasocket
@@ -17,7 +17,7 @@ Download the plugin, e.g. `wget -O ~/.vim/complete-client.vim https://raw.github
 
 Add the following to your `~/.vimrc` (the last block/line is optional),
 
-```
+```vim
 so ~/.vim/complete-client.vim
 
 " Call the complete function. NOTE that in the future, on-keypress (TextChangeI) events
@@ -35,7 +35,7 @@ After you've completed the above, whenever you press `<C-X><C-U>`, vim should be
 
 To actually start a server on this URL, you can write a minimal Flask app (save this as `server.py` anywhere, and run it like `python server.py`),
 
-```
+```python
 from __future__ import absolute_import
 from __future__ import print_function
 
